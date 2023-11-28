@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRID</title>
+    <style>
+      @media (min-width: 721px) {
+        .header {
+          grid-area: header;
+        }
+        .menu {
+          grid-area: menu;
+        }
+        .hero {
+          grid-area: hero;
+        }
+        .main {
+          grid-area: main;
+        }
+        .banner {
+          grid-area: banner;
+        }
+        .extra {
+          grid-area: extra;
+        }
+        .image {
+          grid-area: image;
+        }
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: 40px 2fr repeat(4, 1fr);
+          grid-template-areas:
+            "header header header header"
+            "hero hero hero hero"
+            "menu main main main"
+            "menu main main main"
+            "menu extra image image";
+        }
+      }
+      @media (min-width: 1001px) {
+        .grid {
+          grid-template-areas:
+            "header menu menu menu"
+            "hero hero hero hero"
+            "hero hero hero hero"
+            "main main . image"
+            "main main . extra"
+            "banner banner banner banner";
+        }
+      }
+      .toolbar {
+        grid-column: 4;
+        grid-row: 1 / -1;
+        opacity: 0.85;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="header" style="background-color:Tomato;  color: white;">Header</div>
+      <div class="menu" style="background-color:rgb(71, 86, 255); color: white;">Menu</div>
+      <div class="hero" style="background-color:rgb(71, 255, 117); color: white;">Hero</div>
+      <div class="main" style="background-color:rgb(255, 71, 209); color: white;">Main</div>
+      <div class="banner" style="background-color:rgb(252, 255, 71); color: white;">Banner</div>
+      <div class="extra" style="background-color:rgb(69, 0, 0);  color: white;">Extra</div>
+      <div class="image" style="background-color:rgb(160, 71, 255); color: white;">Image</div>
+    </div>
+  </body>
+</html>
